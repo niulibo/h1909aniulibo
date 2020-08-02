@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/emp/addEmp}" th:object="${emp}" method="post" enctype="multipart/from-data">
+    姓名 :
+        <input th:type="text" name="ename"><br/>
+    性别 :
+        <input th:type="radio" name="sex" value="男">男
+        <input th:type="radio" name="sex" value="女">女<br/>
+    工作:
+         <input th:type="text" name="job"><br/>
+    生日:
+        <input th:type="date" name="birthday"><br/>
+<!--    头像 :-->
+<!--        <input th:type="file" name="pic"><br>-->
+    部门 :
+        <select name="did">
+            <option>--请选择所在部门--</option>
+            <option th:each="dept:${dlist}" th:text="${dept.dname}"
+                th:value="${dept.did}"></option>
+        </select><br>
+    <input th:type="submit" value="提交">
+</form>
+</body>
+</html>
