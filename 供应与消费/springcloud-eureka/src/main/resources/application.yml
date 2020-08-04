@@ -1,0 +1,11 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: eureka-server
+eureka:
+  client:
+    register-with-eureka: false #�Ƿ��������Ϣע�ᵽע������
+    fetch-registry: false #�Ƿ��ȡ����΢����
+    service-url:
+      defaultZone: http://127.0.0.1:${server.port}/eureka
